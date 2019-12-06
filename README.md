@@ -1,5 +1,5 @@
 # EntityCheck
-Script to check for duplicates/special characters within entity lists
+Script to check for duplicates/special characters within .csv entity lists
 
 
 # Requirements

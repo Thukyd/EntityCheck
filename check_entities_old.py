@@ -22,7 +22,6 @@ for filepath in glob.glob(os.path.join(folder_path, "*.csv")):
 
             # update marker set with row contents
             found_values.update(row)
-            print(found_values)
             if new_row:
                 #new row isn't empty: write it
                 writer.writerow(new_row)

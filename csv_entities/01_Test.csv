@@ -1,11 +1,10 @@
 Instagram;IG;Insta
-Facebook;FB
-Snapchat;SC
-Google Plus
-MySpace;
-MySpace
-Facebook;IG
-Instagram
-
-Insta;MySpace
-
+Facebook;FB;
+Snapchat;SC;
+Google Plus;FB;
+MySpace;;
+MySpace;;
+Facebook;IG;
+Instagram;;
+;;
+Insta;MySpace;

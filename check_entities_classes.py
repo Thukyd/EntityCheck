@@ -29,7 +29,7 @@ class ReadInAllFiles():
                 for row in reader:
                     # delete empty list elements & filter out already seen elements
                     # new_row = [x for x in row if x and x not in found_values]
-                    myCrap = []
+                    allData = []
                     for x in row:
                         if not x: # empty element
                             # do not add to list!!!
@@ -37,15 +37,15 @@ class ReadInAllFiles():
                            
                         elif x not in found_values: # unique element
                             print("new " + x)
-                            myCrap.append(x)
+                            allData.append(x)
                         else: # found element again
                             print("shit, I found " + str(x) + " again")
                             
                     if not row:
                         print("empty row")
 
-                    print(myCrap)
-                    writer.writerow(myCrap)
+                    print(allData)
+                    writer.writerow(allData)
                     
 
             

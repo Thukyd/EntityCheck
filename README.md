@@ -1,5 +1,7 @@
 # EntityCheck
 Script to check for duplicates/special characters within .csv entity lists
++ csv files have to be in the "csv_entites" folder
++ output files will be saved in subfolder "csv_entities/output_files"
 
 
 # Requirements

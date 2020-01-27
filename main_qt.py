@@ -23,21 +23,24 @@ class mainWindow(QtWidgets.QMainWindow):
 
         ### BUTTON ACTIONS
         #self.ui_entity.myButton.clicked.connect(self.on_button_click)
-        self.ui_entity.result.clicked.connect(self.on_button_click_entity_check)
+        self.ui_entity.checkEntityButton.clicked.connect(self.on_button_click_entity_check)
             # "checkEntityButton" = Butten name in QT
 
+        
         ### for entity_check
         self.folder = "csv_entities/"
         self.foundValues = set()
 
     def on_button_click(self):
-        text = self.ui_entity.myInput.text()
+        text = self.ui_entity.myInput.setText()
         print("on_button_click: Text =  \"" + text + "\"")
 
     def on_button_click_entity_check(self):
-        text = self.ui_entity.result.text("Entity check executed")
-        print("Event:  \"" + text + "\"")
+        self.ui_entity.label.setText("Der Button wurde geklickt")
+        #print("Event:  \"" + str(text) + "\"")
             # "resultCheck" = Label name for text element in QT
+        self.entity_check()
+        self.ui_entity.label.setText("Entity Check erfolgreich ausgeführt")
 
     def entity_check(self):
         for filepath in glob.glob(os.path.join(self.folder, "*.csv")):
@@ -46,7 +49,7 @@ class mainWindow(QtWidgets.QMainWindow):
             filename = filepathSplit[1]
             newFilename = "output_files/new" + filename
 
-            with open(filepath) as fileInput, open(self.folder + newFilename, "w", encoding="uft-8", newline="") as fileOutput: 
+            with open(filepath) as fileInput, open(self.folder + newFilename, "w", encoding="utf-8", newline="") as fileOutput: 
                 reader = csv.reader(fileInput, delimiter=";")
                 writer = csv.writer (fileOutput, delimiter=";")
 

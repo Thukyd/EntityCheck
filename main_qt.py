@@ -1,7 +1,7 @@
 import sys
 from qtpy import QtWidgets
 
-from placeholder.mainwindow import Ui_MainWindow
+from ui_entity.mainwindow import Ui_MainWindow
 
 # imports for entity check
 import os,glob
@@ -15,15 +15,15 @@ class mainWindow(QtWidgets.QMainWindow):
         
         self.setWindowTitle("Currywurst") # set Window Witle
         
-        self.placeholder = Ui_MainWindow() # intiate Main Window
-        self.placeholder.setupUi(self) # setuo window
+        self.ui_entity = Ui_MainWindow() # intiate Main Window
+        self.ui_entity.setupUi(self) # setuo window
 
-        #self.placeholder.jp_task_button.clicked.connect(self.placeholder.checkBox_3.toggle) # button click triggers checkbSSox (sender => ) signal
+        #self.ui_entity.jp_task_button.clicked.connect(self.ui_entity.checkBox_3.toggle) # button click triggers checkbSSox (sender => ) signal
 
 
         ### BUTTON ACTIONS
-        self.placeholder.myButton.clicked.connect(self.on_button_click)
-        self.placeholder.checkEntityButton.clicked.connect(self.on_button_click_entity_check)
+        #self.ui_entity.myButton.clicked.connect(self.on_button_click)
+        self.ui_entity.checkEntityButton.clicked.connect(self.on_button_click_entity_check)
             # "checkEntityButton" = Butten name in QT
 
         ### for entity_check
@@ -31,11 +31,11 @@ class mainWindow(QtWidgets.QMainWindow):
         self.foundValues = set()
 
     def on_button_click(self):
-        text = self.placeholder.myInput.text()
+        text = self.ui_entity.myInput.text()
         print("on_button_click: Text =  \"" + text + "\"")
 
     def on_button_click_entity_check(self):
-        text = self.placeholder.resultCheck.text("Entity check executed")
+        text = self.ui_entity.result.text("Entity check executed")
         print("Event:  \"" + text + "\"")
             # "resultCheck" = Label name for text element in QT
 
@@ -46,7 +46,7 @@ class mainWindow(QtWidgets.QMainWindow):
             filename = filepathSplit[1]
             newFilename = "output_files/new" + filename
 
-            with open(filepath) as fileInupt, open(self.folder + newFilename, "w", encoding="uft-8", newline="") as fileOutput: 
+            with open(filepath) as fileInput, open(self.folder + newFilename, "w", encoding="uft-8", newline="") as fileOutput: 
                 reader = csv.reader(fileInput, delimiter=";")
                 writer = csv.writer (fileOutput, delimiter=";")
 

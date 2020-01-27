@@ -23,7 +23,7 @@ class mainWindow(QtWidgets.QMainWindow):
 
         ### BUTTON ACTIONS
         #self.ui_entity.myButton.clicked.connect(self.on_button_click)
-        self.ui_entity.checkEntityButton.clicked.connect(self.on_button_click_entity_check)
+        self.ui_entity.result.clicked.connect(self.on_button_click_entity_check)
             # "checkEntityButton" = Butten name in QT
 
         ### for entity_check

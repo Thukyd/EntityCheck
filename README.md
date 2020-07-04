@@ -1,10 +1,10 @@
-# EntityCheck
+# Description
 Script to check for duplicates/special characters within .csv entity lists
 + csv files have to be in the "csv_entites" folder
 + output files will be saved in subfolder "csv_entities/output_files"
 
 
-# Requirements
+# Entity Check
 + entity files can be stored at a folder
 + all files in the folder will be handled
 + entity values will be checked for special charcters (non-german)
